@@ -83,3 +83,36 @@ public class Main {
             arenaSize = 12;
         }
 
+      Arena arena = new Arena(arenaSize);
+
+        CharacterClass classA = chooseCharacterClass("Jogador A");
+        CharacterClass classB = chooseCharacterClass("Jogador B");
+
+        int defaultPosA = Math.max(0, arenaSize / 3);
+        int defaultPosB = Math.min(arenaSize - 1, 2 * arenaSize / 3);
+
+        Player playerA = new Player("Jogador A", "A", classA, defaultPosA);
+        Player playerB = new Player("Jogador B", "B", classB, defaultPosB);
+
+        HumanController controllerA = new HumanController(SCANNER);
+        HumanController controllerB = new HumanController(SCANNER);
+
+        return new Game(
+                arena,
+                playerA,
+                playerB,
+                controllerA,
+                controllerB,
+                80
+        );
+    }
+
+    public static void main(String[] args) {
+        System.out.println("The Darkest Duel");
+        System.out.println("Modo manual para dois jogadores");
+
+        Game game = createManualGame();
+
+        game.run();
+    }
+}
