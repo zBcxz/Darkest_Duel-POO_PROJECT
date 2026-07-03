@@ -1,5 +1,10 @@
 package darkestduel.classes;
 
+import darkestduel.actions.Action;
+import darkestduel.actions.AttackAction;
+import darkestduel.actions.CounterAttackAction;
+import darkestduel.actions.EvasionAction;
+import darkestduel.actions.WaitAction;
 import java.util.List;
 
 public class Assassin extends CharacterClass {

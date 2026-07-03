@@ -1,5 +1,10 @@
-package darkestduel.classes
+package darkestduel.classes;
 
+import darkestduel.actions.Action;
+import darkestduel.actions.AttackAction;
+import darkestduel.actions.EvasionAction;
+import darkestduel.actions.FireBombAction;
+import darkestduel.actions.WaitAction;
 import java.util.List;
 
 public class Archer extends CharacterClass {

@@ -1,5 +1,9 @@
 package darkestduel.classes;
 
+import darkestduel.actions.Action;
+import darkestduel.actions.AttackAction;
+import darkestduel.actions.DefenseAction;
+import darkestduel.actions.WaitAction;
 import java.util.List;
 
 public class SpearMaster extends CharacterClass {

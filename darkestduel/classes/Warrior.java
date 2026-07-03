@@ -1,7 +1,12 @@
 package darkestduel.classes;
 
+import darkestduel.actions.Action;
+import darkestduel.actions.AttackAction;
+import darkestduel.actions.CounterAttackAction;
+import darkestduel.actions.DefenseAction;
+import darkestduel.actions.HealAction;
+import darkestduel.actions.WaitAction;
 import java.util.List;
-
 public class Warrior extends CharacterClass {
         public Warrior() {
             super("Warrior", 36, 2, 1, 8, 2, 1, 0.10, 2);
