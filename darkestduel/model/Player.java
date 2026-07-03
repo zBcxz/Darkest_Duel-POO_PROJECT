@@ -1,10 +1,17 @@
 package darkestduel.model;
 
-import darkestduel.classes.*;
-import darkestduel.effects.*;
+import darkestduel.classes.CharacterClass;
+import darkestduel.effects.StatusEffect;
+//import darkestduel.exceptions.InsufficientAcException;
+//import darkestduel.exceptions.InvalidAcException;
+import darkestduel.game.Arena;
+import darkestduel.util.DamageModification;
+import darkestduel.util.DamageReport;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
-
+import java.util.Map;
 
 public class Player {
         private String name;

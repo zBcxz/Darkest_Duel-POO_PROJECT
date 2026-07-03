@@ -1,13 +1,14 @@
 package darkestduel.actions;
 
+import darkestduel.effects.EvasionEffect;
+import darkestduel.game.Arena;
 import darkestduel.model.Player;
 
-
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class EvasionAction extends Action {
-    private final double chance;
+    private double chance;
 
     public EvasionAction() {
         this(0.50);
