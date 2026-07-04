@@ -2,9 +2,9 @@ package darkestduel.util;
 
 
 public class MovementPreview {
-        private boolean valid;
-        private int newPosition;
-        private String message;
+        private final boolean valid;
+        private final int newPosition;
+        private final String message;
 
         public MovementPreview(boolean valid, int newPosition, String message) {
             this.valid = valid;

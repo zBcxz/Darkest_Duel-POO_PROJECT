@@ -2,16 +2,15 @@ package darkestduel.actions;
 
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class FireBombAction extends Action {
-    private int minRange;
-    private int maxRange;
-    private int radius;
-    private int duration;
-    private int fireDamage;
+    private final int maxRange;
+    private final int minRange;
+    private final int radius;
+    private final int duration;
+    private final int fireDamage;
 
     public FireBombAction() {
         super(

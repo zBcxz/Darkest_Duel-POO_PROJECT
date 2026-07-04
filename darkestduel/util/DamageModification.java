@@ -4,8 +4,8 @@ import java.util.List;
 
 
 public class DamageModification {
-        private int damage;
-        private List<String> messages;
+        private final int damage;
+        private final List<String> messages;
 
         public DamageModification(int damage, List<String> messages) {
             this.damage = damage;

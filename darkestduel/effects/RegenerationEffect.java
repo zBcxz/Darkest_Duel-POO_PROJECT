@@ -1,10 +1,12 @@
 package darkestduel.effects;
 
-import java.util.List;
+import darkestduel.game.Arena;
+import darkestduel.model.Player;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RegenerationEffect extends StatusEffect {
-        private  int healPerTurn;
+        private final int healPerTurn;
 
         public RegenerationEffect(int duration, int healPerTurn) {
             super("Regeneração", duration);

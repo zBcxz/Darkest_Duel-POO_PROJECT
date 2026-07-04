@@ -1,9 +1,14 @@
 package darkestduel.effects;
 
-import java.util.List;
+import darkestduel.model.Player;
+import darkestduel.util.DamageModification;
+
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class EvasionEffect extends StatusEffect {
+        private static final Random RANDOM = new Random();
         private final double chance;
 
         public EvasionEffect(int duration, double chance) {

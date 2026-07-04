@@ -3,13 +3,12 @@ package darkestduel.actions;
 import darkestduel.effects.RegenerationEffect;
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class HealAction extends Action {
-    private int duration;
-    private int healPerTurn;
+    private final int duration;
+    private final int healPerTurn;
 
     public HealAction(String name, String description, int acCost, int duration, int healPerTurn, int cooldown) {
         super(name, description, acCost, cooldown, false);

@@ -1,7 +1,11 @@
 package darkestduel.effects;
 
-import java.util.List;
+//import darkestduel.exceptions.InvalidStatusEffectException;
+import darkestduel.game.Arena;
+import darkestduel.model.Player;
+import darkestduel.util.DamageModification;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class StatusEffect {
         protected final String name;

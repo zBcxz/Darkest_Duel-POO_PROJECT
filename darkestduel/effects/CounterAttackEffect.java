@@ -1,10 +1,11 @@
 package darkestduel.effects;
 
-import java.util.List;
+import darkestduel.model.Player;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CounterAttackEffect extends StatusEffect {
-        private  int acBonus;
+        private final int acBonus;
 
         public CounterAttackEffect(int duration, int acBonus) {
             super("Contra-ataque", duration);

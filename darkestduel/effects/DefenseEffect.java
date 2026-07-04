@@ -1,7 +1,10 @@
 package darkestduel.effects;
 
-import java.util.List;
+import darkestduel.model.Player;
+import darkestduel.util.DamageModification;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class DefenseEffect extends StatusEffect {
         private final double reduction;

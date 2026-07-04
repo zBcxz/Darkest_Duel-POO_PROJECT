@@ -2,28 +2,25 @@ package darkestduel.model;
 
 import darkestduel.classes.CharacterClass;
 import darkestduel.effects.StatusEffect;
-//import darkestduel.exceptions.InsufficientAcException;
-//import darkestduel.exceptions.InvalidAcException;
 import darkestduel.game.Arena;
 import darkestduel.util.DamageModification;
 import darkestduel.util.DamageReport;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Player {
-        private String name;
-        private String symbol;
-        private CharacterClass characterClass;
+        private final String name;
+        private final String symbol;
+        private final CharacterClass characterClass;
         private int position;
 
         // Encapsulamento: HP e AC são privados e alterados apenas por métodos.
         private int hp;
         private int ac;
 
-        private List<StatusEffect> statusEffects = new ArrayList<>();
+        private List<StatusEffect> final statusEffects = new ArrayList<>();
         private Map<String, Integer> cooldowns = new LinkedHashMap<>();
 
         public Player(String name, String symbol, CharacterClass characterClass, int position) {

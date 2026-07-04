@@ -3,8 +3,8 @@ package darkestduel.util;
 import java.util.List;
 
 public class DamageReport {
-        private int damage;
-        private List<String> messages;
+        private final int damage;
+        private final List<String> messages;
 
         public DamageReport(int damage, List<String> messages) {
             this.damage = damage;
