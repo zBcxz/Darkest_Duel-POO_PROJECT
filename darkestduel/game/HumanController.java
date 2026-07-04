@@ -6,7 +6,6 @@ import darkestduel.actions.FireBombAction;
 import darkestduel.actions.MovementAction;
 import darkestduel.model.Player;
 import darkestduel.util.MovementPreview;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,18 +15,19 @@ public class HumanController {
     public HumanController(Scanner scanner) {
         this.scanner = scanner;
     }
+
     public Action chooseAction(Player player, Player opponent, Arena arena) {
-         List<Action> actions = player.getCharacterClass().getActions();
+        List<Action> actions = player.getCharacterClass().getActions();
 
         while (true) {
-              System.out.println("\nTurno de " + player.getName() + " (" + player.getCharacterClass().getName() + ")");
-              System.out.println("HP: " + player.getHp() + "/" + player.getMaxHp() +
-                      " | AC: " + player.getAc() +
-                      " | Posição: " + player.getPosition());
-              System.out.println("Status: " + player.statusSummary());
-              System.out.println("\nAções disponíveis:");
+            System.out.println("\nTurno de " + player.getName() + " (" + player.getCharacterClass().getName() + ")");
+            System.out.println("HP: " + player.getHp() + "/" + player.getMaxHp() +
+                    " | AC: " + player.getAc() +
+                    " | Posição: " + player.getPosition());
+            System.out.println("Status: " + player.statusSummary());
+            System.out.println("\nAções disponíveis:");
 
-              for (int i = 0; i < actions.size(); i++) {
+            for (int i = 0; i < actions.size(); i++) {
                 Action action = actions.get(i);
                 String status = actionStatus(action, player, opponent, arena);
                 String extra = "";
@@ -49,7 +49,7 @@ public class HumanController {
             }
 
             System.out.print("Escolha o número da ação: ");
-            String choice = SCANNER.nextLine().trim();
+            String choice = scanner.nextLine().trim();
 
             if (!choice.matches("\\d+")) {
                 System.out.println("Entrada inválida.");
@@ -57,6 +57,7 @@ public class HumanController {
             }
 
             int index = Integer.parseInt(choice) - 1;
+
             if (index < 0 || index >= actions.size()) {
                 System.out.println("Ação inexistente.");
                 continue;
@@ -72,6 +73,7 @@ public class HumanController {
         }
 
         int cooldown = player.cooldownRemaining(action.getKey());
+
         if (cooldown > 0) {
             return "Cooldown restante: consumir mais " + cooldown + " AC.";
         }
@@ -84,6 +86,7 @@ public class HumanController {
 
         if (action instanceof AttackAction) {
             AttackAction attackAction = (AttackAction) action;
+
             if (!attackAction.isTargetInRange(player, opponent, arena)) {
                 return "Alvo fora do alcance.";
             }
@@ -91,6 +94,7 @@ public class HumanController {
 
         if (action instanceof FireBombAction) {
             FireBombAction fireBombAction = (FireBombAction) action;
+
             if (!fireBombAction.isTargetInRange(player, opponent, arena)) {
                 return "Alvo fora do alcance.";
             }

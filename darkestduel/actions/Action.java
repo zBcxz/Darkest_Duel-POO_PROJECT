@@ -1,9 +1,8 @@
 package darkestduel.actions;
 
-import darkestduel.exceptions.InvalidActionException;
+//import darkestduel.exceptions.InvalidActionException;
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
-
 import java.util.List;
 
 public abstract class Action {

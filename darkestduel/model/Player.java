@@ -20,7 +20,7 @@ public class Player {
         private int hp;
         private int ac;
 
-        private List<StatusEffect> final statusEffects = new ArrayList<>();
+        private List<StatusEffect> statusEffects = new ArrayList<>();
         private Map<String, Integer> cooldowns = new LinkedHashMap<>();
 
         public Player(String name, String symbol, CharacterClass characterClass, int position) {
