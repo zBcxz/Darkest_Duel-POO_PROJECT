@@ -1,6 +1,6 @@
 package darkestduel.effects;
 
-//import darkestduel.exceptions.InvalidStatusEffectException;
+import darkestduel.exceptions.InvalidStatusEffectException;
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
 import darkestduel.util.DamageModification;
@@ -13,7 +13,7 @@ public abstract class StatusEffect {
 
         public StatusEffect(String name, int duration) {
             if (duration <= 0) {
-                throw new IllegalArgumentException("A duração do efeito precisa ser positiva.");
+                throw new InvalidStatusEffectException("A duração do efeito precisa ser positiva.");
             }
             this.name = name;
             this.duration = duration;

@@ -1,6 +1,6 @@
 package darkestduel.game;
 
-//import darkestduel.exceptions.InvalidArenaException;
+import darkestduel.exceptions.InvalidArenaException;
 import darkestduel.model.Player;
 import darkestduel.util.DamageReport;
 import darkestduel.util.MovementPreview;
@@ -15,7 +15,7 @@ import java.util.Map;
 
         public Arena(int size) {
             if (size < 4) {
-                throw new IllegalArgumentException("A arena precisa ter pelo menos 4 casas.");
+                throw new InvalidArenaException("A arena precisa ter pelo menos 4 casas.");
             }
             this.size = size;
         }

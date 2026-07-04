@@ -2,6 +2,8 @@ package darkestduel.model;
 
 import darkestduel.classes.CharacterClass;
 import darkestduel.effects.StatusEffect;
+import darkestduel.exceptions.InsufficientAcException;
+import darkestduel.exceptions.InvalidAcException;
 import darkestduel.game.Arena;
 import darkestduel.util.DamageModification;
 import darkestduel.util.DamageReport;
@@ -74,7 +76,7 @@ public class Player {
 
         public void addAc(int amount) {
             if (amount < 0) {
-                throw new IllegalArgumentException("Não é possível adicionar uma quantidade negativa de AC.");
+                throw new InvalidAcException("Não é possível adicionar uma quantidade negativa de AC.");
             }
             ac += amount;
         }
@@ -85,11 +87,11 @@ public class Player {
 
         public void spendAc(int amount) {
             if (amount < 0) {
-                throw new IllegalArgumentException("Não é possível gastar uma quantidade negativa de AC.");
+                throw new InvalidAcException("Não é possível gastar uma quantidade negativa de AC.");
             }
 
             if (amount > ac) {
-                throw new IllegalArgumentException(name + " não possui AC suficiente.");
+                throw new InsufficientAcException(name + " não possui AC suficiente.");
             }
 
             ac -= amount;

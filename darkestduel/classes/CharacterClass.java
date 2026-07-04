@@ -2,6 +2,8 @@ package darkestduel.classes;
 
 import darkestduel.actions.Action;
 import darkestduel.actions.MovementAction;
+import darkestduel.exceptions.InvalidDamageMultiplierException;
+import darkestduel.exceptions.InvalidMovementException;
 import darkestduel.util.RollResult;
 import java.util.*;
 
@@ -69,7 +71,7 @@ public abstract class CharacterClass {
 
     public RollResult rollDamage(int multiplier) {
         if (multiplier < 1) {
-            throw new IllegalArgumentException("O multiplicador de dano precisa ser >= 1.");
+            throw new InvalidDamageMultiplierException("O multiplicador de dano precisa ser >= 1.");
         }
 
         List<Integer> rolls = new ArrayList<>();
@@ -97,7 +99,7 @@ public abstract class CharacterClass {
 
     public int movementCost(int distance) {
         if (distance < 1) {
-            throw new IllegalArgumentException("A distância de movimento precisa ser positiva.");
+            throw new InvalidMovementException("A distância de movimento precisa ser positiva.");
         }
         return (distance + 1) / 2;
     }
