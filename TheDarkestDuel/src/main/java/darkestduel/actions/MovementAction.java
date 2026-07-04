@@ -1,12 +1,18 @@
 package darkestduel.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
 import darkestduel.util.MovementPreview;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Representa uma ação de movimento.
+ *
+ * Permite que o jogador se aproxime ou se afaste do adversário,
+ * respeitando os limites da arena e a posição do oponente.
+ */
 public class MovementAction extends Action {
     private final int steps;
 

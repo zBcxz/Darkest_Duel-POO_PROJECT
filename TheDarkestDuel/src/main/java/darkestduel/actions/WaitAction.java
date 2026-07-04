@@ -1,11 +1,17 @@
 package darkestduel.actions;
 
-import darkestduel.game.Arena;
-import darkestduel.model.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import darkestduel.game.Arena;
+import darkestduel.model.Player;
+
+/**
+ * Representa a ação Esperar.
+ *
+ * Encerra o turno sem gastar AC, permitindo que o jogador
+ * preserve os pontos de ação acumulados.
+ */
 public class WaitAction extends Action {
     public WaitAction() {
         super(

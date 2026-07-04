@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Controla o fluxo principal da partida.
+ *
+ * Alterna turnos entre os jogadores, executa ações,
+ * aplica efeitos de início e fim de turno e determina o vencedor.
+ */
 public class Game {
     private Arena arena;
     private Player playerA;
@@ -17,6 +23,16 @@ public class Game {
     private int maxTurns;
     private int turnCounter;
 
+    /**
+ * Cria uma nova partida.
+ *
+ * @param arena arena onde a partida ocorrerá
+ * @param playerA primeiro jogador
+ * @param playerB segundo jogador
+ * @param controllerA controlador do primeiro jogador
+ * @param controllerB controlador do segundo jogador
+ * @param maxTurns limite máximo de turnos da partida
+ */
     public Game(
             Arena arena,
             Player playerA,
@@ -34,6 +50,10 @@ public class Game {
         this.turnCounter = 1;
     }
 
+    /**
+ * Executa o loop principal da partida até que um jogador seja derrotado
+ * ou o limite de turnos seja atingido.
+ */
     public void run() {
         System.out.println("\n=== THE DARKEST DUEL ===");
         System.out.println("Legenda da arena: A/B = jogadores | * = fogo | _ = casa vazia\n");

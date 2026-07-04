@@ -1,11 +1,16 @@
 package darkestduel.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import darkestduel.effects.DefenseEffect;
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
-
-import java.util.ArrayList;
-import java.util.List;
+/**
+ * Representa a ação Defender.
+ *
+ * Aplica um efeito de defesa que reduz o próximo dano recebido.
+ */
 public class DefenseAction extends Action {
     public DefenseAction() {
         super(

@@ -1,17 +1,28 @@
 package darkestduel.classes;
 
+import java.util.List;
+
 import darkestduel.actions.Action;
 import darkestduel.actions.AttackAction;
 import darkestduel.actions.EvasionAction;
 import darkestduel.actions.FireBombAction;
 import darkestduel.actions.WaitAction;
-import java.util.List;
 
+/**
+ * Representa a classe Archer.
+ *
+ * Classe de longo alcance, com alta mobilidade,
+ * ataques à distância, evasão e bomba incendiária.
+ */
 public class Archer extends CharacterClass {
         public Archer() {
             super("Archer", 44, 2, 1, 10, 6, 2, 0.20, 2);
         }
-
+        /**
+        * Retorna as ações específicas disponíveis para esta classe.
+        *
+        * @return lista de ações da classe
+        */
         @Override
         public List<Action> getActions() {
             List<Action> actions = getMovementActions();

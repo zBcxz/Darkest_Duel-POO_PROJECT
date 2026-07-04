@@ -1,12 +1,16 @@
 package darkestduel.effects;
 
-import darkestduel.model.Player;
-import darkestduel.util.DamageModification;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import darkestduel.model.Player;
+import darkestduel.util.DamageModification;
+
+/**
+ * Efeito de evasão que possui chance de anular completamente
+ * o próximo dano recebido.
+ */
 public class EvasionEffect extends StatusEffect {
         private static final Random RANDOM = new Random();
         private final double chance;

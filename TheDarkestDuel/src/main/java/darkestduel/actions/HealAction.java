@@ -1,11 +1,17 @@
 package darkestduel.actions;
 
-import darkestduel.effects.RegenerationEffect;
-import darkestduel.game.Arena;
-import darkestduel.model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+import darkestduel.effects.RegenerationEffect;
+import darkestduel.game.Arena;
+import darkestduel.model.Player;
+
+/**
+ * Representa uma ação de cura ao longo do tempo.
+ *
+ * Aplica um efeito de regeneração no jogador.
+ */
 public class HealAction extends Action {
     private final int duration;
     private final int healPerTurn;

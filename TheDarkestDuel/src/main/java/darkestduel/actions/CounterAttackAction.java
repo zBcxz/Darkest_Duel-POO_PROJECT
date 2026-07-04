@@ -1,12 +1,17 @@
 package darkestduel.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import darkestduel.effects.CounterAttackEffect;
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Representa a ação Contra-ataque.
+ *
+ * Aplica um efeito que concede AC ao jogador caso ele seja atacado.
+ */
 public class CounterAttackAction extends Action {
     private  int acBonus;
 

@@ -2,6 +2,12 @@ package darkestduel.util;
 
 import java.util.List;
 
+/**
+ * Armazena o resultado de uma rolagem de dano.
+ *
+ * Contém os dados rolados, dano base, informação de crítico,
+ * multiplicador crítico e dano total.
+ */
 public class RollResult {
         private final int diceAmount;
         private final int diceSides;
@@ -33,6 +39,11 @@ public class RollResult {
             return totalDamage;
         }
 
+        /**
+ * Gera uma descrição textual da rolagem de dano.
+ *
+ * @return texto descrevendo dados, soma e crítico
+ */
         public String describe() {
             StringBuilder rollsText = new StringBuilder();
             for (int i = 0; i < rolls.size(); i++) {

@@ -1,5 +1,10 @@
 package darkestduel.model;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import darkestduel.classes.CharacterClass;
 import darkestduel.effects.StatusEffect;
 import darkestduel.exceptions.InsufficientAcException;
@@ -7,11 +12,13 @@ import darkestduel.exceptions.InvalidAcException;
 import darkestduel.game.Arena;
 import darkestduel.util.DamageModification;
 import darkestduel.util.DamageReport;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
+/**
+ * Representa um jogador dentro da partida.
+ *
+ * O jogador possui nome, símbolo, classe de personagem, posição na arena,
+ * pontos de vida, pontos de ação, efeitos de status ativos e cooldowns.
+ */
 public class Player {
         private final String name;
         private final String symbol;
@@ -25,6 +32,14 @@ public class Player {
         private List<StatusEffect> statusEffects = new ArrayList<>();
         private Map<String, Integer> cooldowns = new LinkedHashMap<>();
 
+                /**
+         * Cria um novo jogador.
+         *
+         * @param name nome do jogador
+         * @param symbol símbolo usado para representar o jogador na arena
+         * @param characterClass classe escolhida pelo jogador
+         * @param position posição inicial do jogador na arena
+         */
         public Player(String name, String symbol, CharacterClass characterClass, int position) {
             this.name = name;
             this.symbol = symbol;
@@ -85,6 +100,13 @@ public class Player {
             addAc(characterClass.getAcPerTurn());
         }
 
+        /**
+         * Gasta pontos de ação do jogador e reduz os cooldowns ativos.
+         *
+         * @param amount quantidade de AC a ser gasta
+         * @throws darkestduel.exceptions.InvalidAcException se a quantidade for negativa
+         * @throws darkestduel.exceptions.InsufficientAcException se o jogador não tiver AC suficiente
+         */
         public void spendAc(int amount) {
             if (amount < 0) {
                 throw new InvalidAcException("Não é possível gastar uma quantidade negativa de AC.");
@@ -120,12 +142,25 @@ public class Player {
             return cooldowns.getOrDefault(actionKey, 0);
         }
 
+        /**
+         * Cura o jogador sem ultrapassar o HP máximo.
+         *
+         * @param amount quantidade de HP a recuperar
+         * @return quantidade real de HP recuperada
+        */
         public int heal(int amount) {
             int oldHp = hp;
             hp = Math.min(getMaxHp(), hp + amount);
             return hp - oldHp;
         }
 
+        /**
+         * Aplica dano ao jogador, considerando os efeitos de status ativos.
+         *
+         * @param rawDamage dano bruto recebido
+         * @param attacker jogador que causou o dano; pode ser null para dano de ambiente
+         * @return relatório contendo o dano final e mensagens geradas
+         */
         public DamageReport receiveDamage(int rawDamage, Player attacker) {
             List<String> messages = new ArrayList<>();
             int damage = Math.max(0, rawDamage);
@@ -174,6 +209,11 @@ public class Player {
             statusEffects.removeIf(StatusEffect::isExpired);
         }
 
+        /**
+        * Retorna um resumo textual dos efeitos de status ativos.
+        *
+        * @return texto com os efeitos ativos ou "Nenhum" caso não existam efeitos
+        */
         public String statusSummary() {
             if (statusEffects.isEmpty()) {
                 return "Nenhum";

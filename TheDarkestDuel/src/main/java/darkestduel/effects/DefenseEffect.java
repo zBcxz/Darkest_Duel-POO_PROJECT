@@ -1,11 +1,16 @@
 package darkestduel.effects;
 
-import darkestduel.model.Player;
-import darkestduel.util.DamageModification;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import darkestduel.model.Player;
+import darkestduel.util.DamageModification;
+
+/**
+ * Efeito de defesa que reduz o próximo dano recebido.
+ *
+ * Após modificar o dano, o efeito expira.
+ */
 public class DefenseEffect extends StatusEffect {
         private final double reduction;
 

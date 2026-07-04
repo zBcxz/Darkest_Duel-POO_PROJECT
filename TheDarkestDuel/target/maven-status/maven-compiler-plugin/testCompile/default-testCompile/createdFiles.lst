@@ -1,1 +1,7 @@
+darkestduel/game/ArenaTest.class
 darkestduel/model/PlayerTest.class
+darkestduel/actions/AttackActionTest.class
+darkestduel/classes/CharacterClassTest.class
+darkestduel/effects/CounterAttackEffectTest.class
+darkestduel/actions/MovementActionTest.class
+darkestduel/effects/DefenseEffectTest.class

@@ -1,1 +1,7 @@
+/workspaces/Darkest_Duel-POO_PROJECT/TheDarkestDuel/src/test/java/darkestduel/actions/AttackActionTest.java
+/workspaces/Darkest_Duel-POO_PROJECT/TheDarkestDuel/src/test/java/darkestduel/actions/MovementActionTest.java
+/workspaces/Darkest_Duel-POO_PROJECT/TheDarkestDuel/src/test/java/darkestduel/classes/CharacterClassTest.java
+/workspaces/Darkest_Duel-POO_PROJECT/TheDarkestDuel/src/test/java/darkestduel/effects/CounterAttackEffectTest.java
+/workspaces/Darkest_Duel-POO_PROJECT/TheDarkestDuel/src/test/java/darkestduel/effects/DefenseEffectTest.java
+/workspaces/Darkest_Duel-POO_PROJECT/TheDarkestDuel/src/test/java/darkestduel/game/ArenaTest.java
 /workspaces/Darkest_Duel-POO_PROJECT/TheDarkestDuel/src/test/java/darkestduel/model/PlayerTest.java

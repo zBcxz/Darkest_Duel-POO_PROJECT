@@ -1,21 +1,40 @@
 package darkestduel.game;
 
+import java.util.List;
+import java.util.Scanner;
+
 import darkestduel.actions.Action;
 import darkestduel.actions.AttackAction;
 import darkestduel.actions.FireBombAction;
 import darkestduel.actions.MovementAction;
 import darkestduel.model.Player;
 import darkestduel.util.MovementPreview;
-import java.util.List;
-import java.util.Scanner;
 
+/**
+ * Controlador responsável por receber comandos do jogador humano.
+ *
+ * Exibe as ações disponíveis no terminal e lê a escolha feita pelo usuário.
+ */
 public class HumanController {
     private final Scanner scanner;
 
+    /**
+ * Cria um controlador humano usando o Scanner informado.
+ *
+ * @param scanner objeto usado para ler entradas do terminal
+ */
     public HumanController(Scanner scanner) {
         this.scanner = scanner;
     }
 
+    /**
+ * Permite que o jogador escolha uma ação disponível.
+ *
+ * @param player jogador atual
+ * @param opponent jogador adversário
+ * @param arena arena da partida
+ * @return ação escolhida pelo jogador
+ */
     public Action chooseAction(Player player, Player opponent, Arena arena) {
         List<Action> actions = player.getCharacterClass().getActions();
 

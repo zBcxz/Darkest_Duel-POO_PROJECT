@@ -1,10 +1,16 @@
 package darkestduel.effects;
 
-import darkestduel.game.Arena;
-import darkestduel.model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+import darkestduel.game.Arena;
+import darkestduel.model.Player;
+
+/**
+ * Efeito de regeneração.
+ *
+ * Cura o jogador no início de seus turnos enquanto o efeito estiver ativo.
+ */
 public class RegenerationEffect extends StatusEffect {
         private final int healPerTurn;
 

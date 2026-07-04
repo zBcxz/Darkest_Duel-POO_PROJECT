@@ -1,4 +1,10 @@
+
 package darkestduel.app;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Supplier;
 
 import darkestduel.classes.Archer;
 import darkestduel.classes.Assassin;
@@ -10,11 +16,12 @@ import darkestduel.game.Game;
 import darkestduel.game.HumanController;
 import darkestduel.model.Player;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.function.Supplier;
-
+/**
+ * Classe principal da aplicação The Darkest Duel.
+ *
+ * Responsável por iniciar o jogo, configurar a partida manual,
+ * permitir a escolha das classes dos jogadores e executar o loop principal.
+ */
 public class Main {
 
     private static final Scanner SCANNER = new Scanner(System.in);
@@ -30,6 +37,12 @@ public class Main {
         return classOptions;
     }
 
+        /**
+     * Permite que o usuário escolha uma classe de personagem pelo terminal.
+     *
+     * @param playerLabel identificação do jogador que está escolhendo a classe
+     * @return classe de personagem escolhida
+     */
     private static CharacterClass chooseCharacterClass(String playerLabel) {
         List<Supplier<CharacterClass>> classOptions = availableClasses();
 
@@ -69,6 +82,14 @@ public class Main {
         return value.isEmpty() ? defaultValue : value;
     }
 
+        /**
+     * Cria uma partida manual com dois jogadores.
+     *
+     * Define o tamanho da arena, permite a escolha das classes,
+     * posiciona os jogadores e instancia os controladores humanos.
+     *
+     * @return objeto Game configurado para execução
+     */
     private static Game createManualGame() {
         System.out.println("\nConfiguração da partida manual");
 
@@ -107,6 +128,11 @@ public class Main {
         );
     }
 
+    /**
+ * Ponto de entrada da aplicação.
+ *
+ * @param args argumentos de linha de comando, não utilizados neste projeto
+ */
     public static void main(String[] args) {
         System.out.println("The Darkest Duel");
         System.out.println("Modo manual para dois jogadores");

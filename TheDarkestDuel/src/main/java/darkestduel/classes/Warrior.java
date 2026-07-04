@@ -1,17 +1,29 @@
 package darkestduel.classes;
 
+import java.util.List;
+
 import darkestduel.actions.Action;
 import darkestduel.actions.AttackAction;
 import darkestduel.actions.CounterAttackAction;
 import darkestduel.actions.DefenseAction;
 import darkestduel.actions.HealAction;
 import darkestduel.actions.WaitAction;
-import java.util.List;
+
+/**
+ * Representa a classe Warrior.
+ *
+ * Classe resistente, focada em combate corpo a corpo,
+ * defesa, contra-ataque e regeneração.
+ */
 public class Warrior extends CharacterClass {
         public Warrior() {
             super("Warrior", 36, 2, 1, 8, 2, 1, 0.10, 2);
         }
-
+        /**
+        * Retorna as ações específicas disponíveis para esta classe.
+        *
+        * @return lista de ações da classe
+        */
         @Override
         public List<Action> getActions() {
             List<Action> actions = getMovementActions();

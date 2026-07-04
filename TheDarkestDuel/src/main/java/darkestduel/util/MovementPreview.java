@@ -1,6 +1,11 @@
 package darkestduel.util;
 
-
+/**
+ * Representa a prévia de um movimento na arena.
+ *
+ * Informa se o movimento é válido, qual seria a nova posição
+ * e uma mensagem explicativa.
+ */
 public class MovementPreview {
         private final boolean valid;
         private final int newPosition;

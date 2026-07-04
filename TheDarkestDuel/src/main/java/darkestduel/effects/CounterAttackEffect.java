@@ -4,6 +4,12 @@ import darkestduel.model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Efeito de contra-ataque.
+ *
+ * Quando o jogador é atacado, ele recebe um bônus de AC
+ * e o efeito expira.
+ */
 public class CounterAttackEffect extends StatusEffect {
         private final int acBonus;
 

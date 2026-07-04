@@ -1,12 +1,18 @@
 package darkestduel.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import darkestduel.effects.EvasionEffect;
 import darkestduel.game.Arena;
 import darkestduel.model.Player;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Representa a ação Evadir.
+ *
+ * Aplica um efeito de evasão que pode anular completamente
+ * o próximo ataque recebido.
+ */
 public class EvasionAction extends Action {
     private double chance;
 
